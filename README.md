@@ -13,7 +13,7 @@ Once completed successfully, just run `main.py`
 
 ## Sample Output
 
-![sample](images/sample.png)
+![sample](result_demo.jpg)
 
 ## Whom to contact?
 
