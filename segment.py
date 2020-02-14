@@ -52,7 +52,7 @@ def contour_mask(image, mask):
                           cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     # Draw contours
     # -1 signifies drawing all contours
-    cv2.drawContours(image, contours, -1, (255, 255, 255), 8)
+    #cv2.drawContours(image, contours, -1, (255, 255, 255), 0)
 
     return image
 
@@ -64,11 +64,12 @@ def mask_out(src, mask):
 
 
 class Segment:
-    def __init__(self, img_path, meme_text, dpi=127.68):
+    def __init__(self, img_path, meme_text, dpi=120.68):
         # Variables
         self.segment_map = None
         self.meme_text = meme_text
         self.dpi = dpi
+        self.image_path = img_path
 
         # Initialize TF model
         print("Using model: " + settings.model_file)
@@ -133,6 +134,7 @@ class Segment:
         plt.imshow(res_image)
         plt.axis('off')
 
-        plt.savefig('test.png', transparent=True)
+		
+        plt.savefig(str(self.image_path)+".png", transparent=True)
         plt.show()
 
