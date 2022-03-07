@@ -80,7 +80,7 @@ class Segment:
         # Load image
         # TODO : Add error capture
         self.image = cv2.imread(img_path)
-        print("Loaded image")
+        print("Loaded images")
 
     def find_segments(self):
         output_tensors = run_tf.run_model(self.interpreter, self.image)
